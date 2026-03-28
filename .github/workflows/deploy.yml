@@ -69,6 +69,7 @@ jobs:
           sed -i "s#\${COOKIES_SECRET}#${COOKIES_SECRET}#g" wrangler.toml
           sed -i "s#\${TURNSTILE_KEY}#${TURNSTILE_KEY}#g" wrangler.toml
           sed -i "s#\${TURNSTILE_SECRET}#${TURNSTILE_SECRET}#g" wrangler.toml
+          sed -i "s#\${PASSWORD}#${PASSWORD}#g" wrangler.toml
         env:
           D1_DATABASE_ID: ${{ secrets.D1_DATABASE_ID }}
           D1_DATABASE_NAME: ${{ secrets.D1_DATABASE_NAME }}
@@ -76,6 +77,7 @@ jobs:
           COOKIES_SECRET: ${{ secrets.COOKIES_SECRET }}
           TURNSTILE_KEY: ${{ secrets.TURNSTILE_KEY }}
           TURNSTILE_SECRET: ${{ secrets.TURNSTILE_SECRET }}
+          PASSWORD: ${{ secrets.PASSWORD }}
 
       # 调试：打印 wrangler.toml 内容
       - name: Debug wrangler.toml
