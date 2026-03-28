@@ -76,6 +76,11 @@ jobs:
           COOKIES_SECRET: ${{ secrets.COOKIES_SECRET }}
           TURNSTILE_KEY: ${{ secrets.TURNSTILE_KEY }}
           TURNSTILE_SECRET: ${{ secrets.TURNSTILE_SECRET }}
+
+      # 调试：打印 wrangler.toml 内容
+      - name: Debug wrangler.toml
+        run: cat wrangler.toml
+
       # 新增：在部署前应用 D1 数据库迁移
       # 这一步会明确地告诉 Wrangler 远程执行 D1 数据库的迁移脚本。
       - name: Apply D1 Migrations
